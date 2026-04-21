@@ -1,0 +1,48 @@
+openapi: 3.0.3
+
+info:
+  title: IVOA Group Membership Service (GMS)
+  version: "1.0"
+  description: |
+    This document defines the REST interface for the IVOA Group Membership
+    Service (GMS) 1.0.
+
+    The service provides a means to determine group membership for the
+    authenticated identity.
+
+    The response format is plain text. The service SHALL return group names,
+    one per line, using simple (unqualified) group names.
+
+    If one or more `group` parameters are supplied, the service SHALL return
+    the subset of those groups for which the identity is a member.
+
+    If no `group` parameter is supplied, the service SHALL return all groups
+    of which the identity is a member.
+
+    Conformance terms such as MUST, SHOULD, and MAY are to be interpreted
+    as described in RFC2119.
+
+  contact:
+    name: IVOA Grid and Web Services Working Group
+    url: https://www.ivoa.net/documents/GMS/
+
+tags:
+  - name: GMS
+    description: Group membership queries
+  - name: VOSI Capabilities
+    description: IVOA VOSI capabilities and service metadata
+
+servers:
+  - url: https://example.org/gms
+    description: Base URL of the GMS service
+
+## any of the $ref values below can be URLs to external (standard) OpenAPI components
+## openapi/vosi needs to be copied from ivoa-std/VOSI
+
+paths:
+
+  /search:
+    $ref: ./openapi/gms/gms-search.yaml
+
+  /capabilities:
+    $ref: ./openapi/vosi/vosi-capabilities.yaml
