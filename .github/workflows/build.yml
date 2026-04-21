@@ -29,7 +29,7 @@ jobs:
         test -f GMS.pdf
         test -f GMS.bbl
         
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v4
       with:
         name: GMS.pdf Preview
         path: GMS.pdf
