@@ -44,9 +44,9 @@ get:
               value: ""
 
     '401':
-      description: Authentication required
-    '500':
-      description: Internal service error
+      $ref: ../vosi/vosi-std-responses.yaml#/not-authenticated
+    '403':
+      $ref: ../vosi/vosi-std-responses.yaml#/permission-denied
 
 components:
 
