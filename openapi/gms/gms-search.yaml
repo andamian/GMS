@@ -56,7 +56,7 @@ components:
       name: group
       in: query
       description: |
-        Identifier of a group (IVOID).
+        Name of a group.
 
         This parameter MAY be repeated to test membership in multiple groups.
 
