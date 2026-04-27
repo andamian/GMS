@@ -16,7 +16,18 @@ get:
   operationId: getMembership
 
   parameters:
-    - $ref: '#/components/parameters/group'
+      - name: group
+      in: query
+      description: Membership of one or more groups.
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+        example:
+          - "group1"
+          - "group2"
+          - "group3"
 
   responses:
     '200':
